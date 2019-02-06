@@ -1,0 +1,15 @@
+service: rest-api-serverless # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  app:
+    handler: app.handler
+    events:
+        - http: ANY /
+        - http: 'ANY {proxy+}'
+
+plugins:
+  - serverless-offline
