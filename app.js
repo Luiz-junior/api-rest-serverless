@@ -14,11 +14,11 @@ app.get('/', (req, res) => {
     res.json({ response: "funfou" })
 });
 
-app.get('/users', (req, res) => routes.googleAuth.getUsers(req, res));
-app.get('/user/:id', (req, res) => routes.googleAuth.getUser(req, res));
-app.post('/user', jsonParser, (req, res) => routes.googleAuth.postUser(req, res));
-app.put('/user/:id', jsonParser, (req, res) => routes.googleAuth.putUser(req, res));
-app.delete('/user/:id', jsonParser, (req, res) => routes.googleAuth.deleteUser(req, res));
+app.get('/users', (req, res) => routes.users.getUsers(req, res));
+app.get('/user/:id', (req, res) => routes.users.getUser(req, res));
+app.post('/user', jsonParser, (req, res) => routes.users.postUser(req, res));
+app.put('/user/:id', jsonParser, (req, res) => routes.users.putUser(req, res));
+app.delete('/user/:id', jsonParser, (req, res) => routes.users.deleteUser(req, res));
 
 
 module.exports.handler = sls(app);

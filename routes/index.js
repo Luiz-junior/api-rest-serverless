@@ -1,6 +1,5 @@
-const googleAuth = require('./googleAuth');
+const users = require('./users');
 
 module.exports = {
-    googleAuth,
-    
+    users,
 };
